@@ -7,7 +7,17 @@
 - name: unzip IntelliJ
   unarchive:
     src: "{{ dest_folder }}/ideaIU-{{ version_no }}.tar.gz"
+    dest: "{{ dest_folder }}"
+
+- name: Copy IntelliJ
+  copy:
+    src: "{{ dest_folder }}/ideaIU-{{ version_no }}"
     dest: "{{ dest_folder }}/IntelliJ"
+
+- name: Remove old files foo
+  file:
+    path: "{{ dest_folder }}/ideaIU-{{ version_no }}"
+    state: absent
 
 - name: delete tar
   file:
