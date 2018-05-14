@@ -10,7 +10,8 @@
     dest: "{{ dest_folder }}"
 
 - name: Move IntelliJ
-  command: "mv {{ dest_folder }}/ideaIU* {{ dest_folder }}/IntelliJ"
+  command: "mv {{ dest_folder }}/idea-* {{ dest_folder }}/IntelliJ"
+  creates: "{{ dest_folder }}/IntelliJ"
 
 - name: delete tar
   file:
