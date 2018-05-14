@@ -9,15 +9,9 @@
     src: "{{ dest_folder }}/ideaIU-{{ version_no }}.tar.gz"
     dest: "{{ dest_folder }}"
 
-- name: stat IntelliJ zip
-  stat:
-    path: "{{ dest_folder }}/idea-*"
-  register: intellij_info
-
 - name: Move IntelliJ
-  command: "mv {{ dest_folder }}/idea-* {{ dest_folder }}/IntelliJ"
+  shell: "mv {{ dest_folder }}/idea-* {{ dest_folder }}/IntelliJ"
   creates: "{{ dest_folder }}/IntelliJ"
-  when: intellij_info.stat.exists
 
 - name: delete tar
   file:
