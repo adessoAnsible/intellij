@@ -2,8 +2,8 @@
 Version=1.0
 Type=Application
 Name=IntelliJ IDEA Ultimate Edition
-Icon=~/Desktop/IntelliJ/bin/idea.png
-Exec="~/Desktop/IntelliJ/bin/idea.sh" %f
+Icon=/home/{{ ansible_user }}/Desktop/IntelliJ/bin/idea.png
+Exec="/home/{{ ansible_user }}/Desktop/IntelliJ/bin/idea.sh" %f
 Comment=The Drive to Develop
 Categories=Development;IDE;
 Terminal=false
