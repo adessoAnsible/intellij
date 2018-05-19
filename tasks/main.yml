@@ -16,3 +16,11 @@
   file:
     path: "{{ dest_folder }}/ideaIU-{{ version_no }}.tar.gz"
     state: absent
+
+- name: create launch entry
+  template:
+    src: jetbrains-idea.desktop
+    dest: ~/.local/share/applications/jetbrains-idea.desktop
+    owner: "{{ ansible_user }}"
+    group: "{{ ansible_user }}"
+    mode: 0600
